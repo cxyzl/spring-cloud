@@ -6,14 +6,16 @@
 
     <groupId>com.spring.cloud</groupId>
     <artifactId>spring-cloud</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <modules>
         <module>spring-cloud-payment01</module>
+        <module>spring-cloud-payment-consul</module>
         <module>spring-cloud-order80</module>
         <module>spring-cloud-commons</module>
         <module>spring-cloud-eureka01</module>
         <module>spring-cloud-eureka02</module>
+        <module>spring-cloud-order-openfeign</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->

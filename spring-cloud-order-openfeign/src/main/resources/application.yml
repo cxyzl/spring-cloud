@@ -1,0 +1,10 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: OPENFEIGN-CLIENT
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: localhost:8848

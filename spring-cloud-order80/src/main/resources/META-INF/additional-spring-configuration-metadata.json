@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "PAYMENT.ribbon.NFLoadBalancerRulerClassName",
+      "type": "java.lang.String",
+      "description": "Description for PAYMENT.ribbon.NFLoadBalancerRulerClassName."
+  }
+] }
