@@ -8,3 +8,20 @@ spring:
       discovery:
         service: ${spring.application.name}
         server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled: true   #开启hystrix
+ribbon:
+  ReadTimeout: 5000 #指的是建立连接后从服务器读取到可用资源所用的时间。
+  ConnectTimeout: 5000 #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间。
+  MaxAutoRetriesNextServer: 1 #重试集群中其他节点的次数
+  MaxAutoRetries: 1 #重试当前节点的次数
+
+#hystrix针对某个服务具体方法的超时时间配置。也可以设置成某个服务的超时时间或者全局的
+hystrix:
+  command:
+    PaymentOpenFeignClient#getPaymentById(Long):
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000

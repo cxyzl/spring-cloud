@@ -3,12 +3,6 @@ server:
 spring:
   application:
     name: ORDER
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/spring-cloud?useUnicode=true&characterEncoding=UTF-8
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
 eureka:
   client:
     service-url:
