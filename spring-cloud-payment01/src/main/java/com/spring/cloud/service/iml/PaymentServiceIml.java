@@ -20,11 +20,6 @@ public class PaymentServiceIml implements IPaymentService {
 
     @Override
     public Payment getPaymentById(Long id) {
-        try {
-            TimeUnit.MILLISECONDS.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return paymentDao.getPaymentById(id);
     }
 }

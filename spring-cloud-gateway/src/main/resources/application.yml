@@ -1,0 +1,25 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+      routes:
+      - id: payment-rout
+         # 硬编码的方式进行路由
+#        uri: localhost:8001，使用这种方式需要关闭上面的发现功能
+        uri: lb://PAYMENT-SERVICE  #利用服务名称进行路由。lb是开启负载均衡的意思。
+        predicates: #断言，进行规则匹配
+          - Path=/payment/get/**
+      - id: order-route
+        uri: lb://OPENFEIGN-CLIENT
+        predicates:
+          - Path=/openFeign/get/**

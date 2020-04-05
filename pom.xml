@@ -16,6 +16,7 @@
         <module>spring-cloud-eureka01</module>
         <module>spring-cloud-eureka02</module>
         <module>spring-cloud-order-openfeign</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
